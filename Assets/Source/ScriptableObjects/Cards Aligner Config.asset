@@ -16,7 +16,7 @@ MonoBehaviour:
   appearTime: 1
   dissapearTime: 0.5
   handWidth: 5
-  totalRotationAngle: 30
+  totalRotationAngle: 25
   gapBetweenCards: 1
   inHandMoveTime: 1
   rotationTime: 1

@@ -38,7 +38,7 @@ public class HandCardsAligner
 
     private void MoveCardY(CardContainer card, float calculatedRotation)
     {
-        float scalingFactor = 0.015f;
+        float scalingFactor = 1.8f;
         float yOffset = Mathf.Abs(calculatedRotation);
         yOffset *= scalingFactor;
         card.transform.DOLocalMoveY(-yOffset, config.InHandMoveTime);
