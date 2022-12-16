@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -6,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class CardsArtLoader
 {
-    public async Task SetArtTo(CardData[] cards)
+    public async Task SetArtTo(List<CardData> cards)
     {
         List<CardData> uniqueCards = FilterUniqueCards(cards);
 
@@ -25,11 +24,11 @@ public class CardsArtLoader
         }
     }
 
-    private List<CardData> FilterUniqueCards(CardData[] cards)
+    private List<CardData> FilterUniqueCards(List<CardData> cards)
     {
         List<CardData> uniqueCardData = new List<CardData>();
 
-        for (int i = 0; i < cards.Length; i++)
+        for (int i = 0; i < cards.Count; i++)
         {
             if (!uniqueCardData.Contains(cards[i]))
             {
@@ -40,10 +39,3 @@ public class CardsArtLoader
         return uniqueCardData;
     }
 }
-
-public class CardInLoad
-{
-    public CardData card;
-    public bool loading;
-}
-

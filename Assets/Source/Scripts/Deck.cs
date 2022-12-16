@@ -1,27 +1,32 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    [SerializeField] [HideInInspector] CardsArtLoader artLoader;
-
     [SerializeField] CardContainer cardContainerPrefab;
-    [SerializeField] DeckConfig deckConfig;
+    [SerializeField] HandCardsAligner handCardsAligner;
+    private List<CardContainer> CardsInDeck;
 
-    public async void Initialize(GameConfig gameConfig)
+    public Action<List<CardContainer>> OnCardsCreated;
+
+    public void Initialize(List<CardData> deckCards)
     {
-        if (deckConfig.cards.Length < 0 || cardContainerPrefab == null)
+        CardsInDeck = new List<CardContainer>();
+
+        if (deckCards.Count < 0 || cardContainerPrefab == null)
         {
             return;
         }
 
-        await artLoader.SetArtTo(deckConfig.cards);
-
-        for (int i = 0; i < deckConfig.cards.Length; i++)
+        for (int i = 0; i < deckCards.Count; i++)
         {
             var newCardContainer = Instantiate(cardContainerPrefab, transform.position, Quaternion.identity, transform);
-            newCardContainer.Initialize(deckConfig.cards[i]);
+            newCardContainer.Initialize(deckCards[i]);
+            newCardContainer.transform.localScale = Vector3.zero;
+            CardsInDeck.Add(newCardContainer);
         }
+
+        OnCardsCreated?.Invoke(CardsInDeck);
     }
 }

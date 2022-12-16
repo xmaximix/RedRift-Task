@@ -2,10 +2,10 @@ using UnityEngine;
 
 public enum CardRarity
 {
-    Common,
-    Rare,
-    Epic,
-    Legendary
+    Common = 0,
+    Rare = 1,
+    Epic = 2,
+    Legendary = 3
 }
 
 public static class CardRarities
