@@ -5,7 +5,6 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     [SerializeField] CardContainer cardContainerPrefab;
-    [SerializeField] HandCardsAligner handCardsAligner;
     private List<CardContainer> CardsInDeck;
 
     public Action<List<CardContainer>> OnCardsCreated;
