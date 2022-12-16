@@ -32,7 +32,7 @@ public class CardContainer : MonoBehaviour
         healthPoints = value;
         if (healthPoints < 1)
         {
-            StartCoroutine(Delay(RemoveFromHand, 1.2f));
+            RemoveFromHand();
         }
         cardView.UpdateHealthPoints(healthPoints);
     }
@@ -46,11 +46,5 @@ public class CardContainer : MonoBehaviour
     private void RemoveFromHand()
     {
         OnRemove?.Invoke(this);
-    }
-
-    private IEnumerator Delay(UnityAction callback, float time)
-    {
-        yield return new WaitForSeconds(time);
-        callback();
     }
 }

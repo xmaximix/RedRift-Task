@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hand : MonoBehaviour
 {
@@ -39,9 +40,17 @@ public class Hand : MonoBehaviour
     {
         cardsInHand.Remove(card);
 
-        cardsAligner.HideCard(card);
+        StartCoroutine(Delay(() => { 
+            cardsAligner.HideCard(card); 
+            cardsAligner.AlignCards(cardsInHand); 
+        }, 1f));
         card.OnRemove -= RemoveFromHand;
+    }
 
-        cardsAligner.AlignCards(cardsInHand);
+
+    private IEnumerator Delay(UnityAction callback, float time)
+    {
+        yield return new WaitForSeconds(time);
+        callback();
     }
 }
