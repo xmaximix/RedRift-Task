@@ -10,16 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4ab68492d2cb17419fc63311d8e46bb, type: 3}
-  m_Name: Deck Favorite
+  m_Name: Game Cards
   m_EditorClassIdentifier: 
   cards:
   - {fileID: 11400000, guid: a9b00d98411aeae47bf5d77536fcef1f, type: 2}
   - {fileID: 11400000, guid: 1dcf85e186b226841bfbea6a60dfd778, type: 2}
   - {fileID: 11400000, guid: aaceed3a3b521c2468d971632db5ee98, type: 2}
   - {fileID: 11400000, guid: 2f4689f644b4e7a4fb3485a015d15889, type: 2}
-  - {fileID: 11400000, guid: a3fb94e3f93b70149a2c6e98b3802766, type: 2}
-  - {fileID: 11400000, guid: aaceed3a3b521c2468d971632db5ee98, type: 2}
-  - {fileID: 11400000, guid: 2f4689f644b4e7a4fb3485a015d15889, type: 2}
-  - {fileID: 11400000, guid: 1dcf85e186b226841bfbea6a60dfd778, type: 2}
-  - {fileID: 11400000, guid: a9b00d98411aeae47bf5d77536fcef1f, type: 2}
   - {fileID: 11400000, guid: a3fb94e3f93b70149a2c6e98b3802766, type: 2}
