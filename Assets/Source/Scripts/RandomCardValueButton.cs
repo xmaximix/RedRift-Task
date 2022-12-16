@@ -25,6 +25,11 @@ public class RandomCardValueButton : MonoBehaviour
             return;
         }
 
+        if (index >= hand.CardsInHand.Count)
+        {
+            index = hand.CardsInHand.Count - 1;
+        }
+
         ChangeVariant variant = (ChangeVariant)Random.Range(0, 3);
         CardContainer selectedCard = hand.CardsInHand[index];
         int newValue = Random.Range(minimumValue, maximumValue + 1);
